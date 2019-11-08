@@ -5,15 +5,15 @@ import styled from "styled-components";
 const BidsList = () => {
   const { state, dispatch } = useContext(Context);
 
-  // console.log("BIDS: ", state.bids);
-    
+  //console.log("BIDS: ", state.bids);
+
   return (
     <Root>
-      {state.bids &&
-        state.bids.map((item, idx) => (
+      {state.asks &&
+        state.asks.map((item, idx) => (
           <TableRow
             key={idx}
-            type="bids"
+            type="asks"
             count="1"
             volume={item[0]}
             price={item[1]}
