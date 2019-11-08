@@ -1,16 +1,12 @@
-import React, { useContext } from "react";
-import Context from "../context";
+import React from "react";
 import TableRow from "./common/TableRow";
 import styled from "styled-components";
-const BidsList = () => {
-  const { state, dispatch } = useContext(Context);
-
-  //console.log("BIDS: ", state.bids);
-
+const BidsList = ({ asks, loading }) => {
   return (
     <Root>
-      {state.asks &&
-        state.asks.map((item, idx) => (
+      {loading && <p>Loading...</p>}
+      {asks &&
+        asks.map((item, idx) => (
           <TableRow
             key={idx}
             type="asks"

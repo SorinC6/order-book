@@ -18,6 +18,16 @@ export default function reducer(state, { type, payload }) {
           })
           .sort((a, b) => b[1] - a[1])
       };
+    case "START_LOADING":
+      return {
+        ...state,
+        loading: true
+      };
+    case "STOP_LOADING":
+      return {
+        ...state,
+        loading: false
+      };
     default:
       return state;
   }

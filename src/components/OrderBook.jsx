@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../context";
 import OrderCard from "./common/OrderCard";
 import styled from "styled-components";
 import BidsList from "./BidsList";
 import AsksList from "./AsksList";
 
 const OrderBook = () => {
+  const { state, dispatch } = useContext(Context);
+
   return (
     <Root>
       <h2>ORDER BOOK ETH/BTC</h2>
       <Main>
         <OrderCard title="Bids">
-          <BidsList />
+          <BidsList bids={state.bids} loading={state.loading} />
         </OrderCard>
         <OrderCard title="Asks">
-          <AsksList />
+          <AsksList asks={state.asks} loading={state.loading} />
         </OrderCard>
       </Main>
     </Root>

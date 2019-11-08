@@ -16,8 +16,11 @@ function App() {
   const count = "Limit";
 
   useEffect(() => {
+    dispatch({ type: "START_LOADING" });
     axios
-      .get(`https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=${count}`)
+      .get(
+        `https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=${state.limit}`
+      )
       .then(res => {
         //console.log(res.data.result.XETHZUSD);
         const { asks } = res.data.result.XETHZUSD;
@@ -27,6 +30,9 @@ function App() {
       })
       .catch(err => {
         console.log(err);
+      })
+      .finally(() => {
+        dispatch({ type: "STOP_LOADING" });
       });
   }, []);
 
