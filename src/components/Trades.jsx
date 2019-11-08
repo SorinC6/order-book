@@ -21,7 +21,3 @@ const Root = styled.div`
     font-size: 17px;
   }
 `;
-
-const Main = styled.div`
-  display: flex;
-`;

@@ -1,4 +1,5 @@
 import React from "react";
+import Dropdown from "./DropDown";
 
 const SidePannel = () => {
   return (
@@ -6,7 +7,7 @@ const SidePannel = () => {
       <header>Logo and stuff</header>
       <section>
         <h1>ORDER FROM</h1>
-        <p>DROPDOWN COMPONENT</p>
+        <Dropdown />
       </section>
     </div>
   );

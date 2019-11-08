@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { setState } from "expect/build/jestMatchersObject";
 
 const useDropdown = (label, defaultState, option) => {
-  const [state, useState] = useState(defaultState);
+  const [state, setState] = useState(defaultState);
   const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`;
 
   const Dropdown = () => {
@@ -13,13 +12,16 @@ const useDropdown = (label, defaultState, option) => {
           id={id}
           value={state}
           onChange={e => setState(e.target.value)}
-          onBlur={e => e.target.value}
+          onBlur={e => setState(e.target.value)}
+          disabled={!option.length}
         >
-          {option.map(item => (
-            <option key={item} value={item}>
-              {item}
-            </option>
-          ))}
+          {/* <option>Limit</option> */}
+          {option &&
+            option.map(item => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
         </select>
       </label>
     );

@@ -11,7 +11,7 @@ import data from "./dummyData";
 function App() {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(reducer, initialState);
-  //console.log(state);
+  console.log(state.count);
 
   const count = "Limit";
 
@@ -19,10 +19,9 @@ function App() {
     dispatch({ type: "START_LOADING" });
     axios
       .get(
-        `https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=${state.limit}`
+        `https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=${state.count}`
       )
       .then(res => {
-        //console.log(res.data.result.XETHZUSD);
         const { asks } = res.data.result.XETHZUSD;
         const { bids } = res.data.result.XETHZUSD;
         dispatch({ type: "FETCH_BIDS", payload: bids });
@@ -34,7 +33,7 @@ function App() {
       .finally(() => {
         dispatch({ type: "STOP_LOADING" });
       });
-  }, []);
+  }, [state.count]);
 
   return (
     <div>

@@ -6,7 +6,7 @@ import BidsList from "./BidsList";
 import AsksList from "./AsksList";
 
 const OrderBook = () => {
-  const { state, dispatch } = useContext(Context);
+  const { state } = useContext(Context);
 
   return (
     <Root>
