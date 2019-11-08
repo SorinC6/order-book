@@ -1,9 +1,18 @@
 export default function reducer(state, { type, payload }) {
   switch (type) {
-    case "ADD_POINTS":
+    case "FETCH_ASKS":
       return {
         ...state,
-        totalScore: state.totalScore + payload
+        asks: payload
+      };
+    case "FETCH_BIDS":
+      return {
+        ...state,
+        bids: payload
+          .map(item => {
+            return [...item, parseInt(item[1])];
+          })
+          .sort((a, b) => b[1] - a[1])
       };
     default:
       return state;
