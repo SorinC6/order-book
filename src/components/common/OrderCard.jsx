@@ -54,5 +54,7 @@ const ColumnTitle = styled.div`
   justify-content: space-between;
   p {
     margin: 0;
+    width: 4rem;
+    text-align: center;
   }
 `;

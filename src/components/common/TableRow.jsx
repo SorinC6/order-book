@@ -36,6 +36,8 @@ const Root = styled.div`
   p {
     font-size: 12px;
     margin: 5px;
+    width: 4rem;
+    text-align: center;
   }
   p:nth-child(1) {
     color: red;
@@ -49,5 +51,6 @@ const Root = styled.div`
   }
   p:nth-child(4) {
     color: green;
+    width: 3rem;
   }
 `;

@@ -1,17 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import Context from "../context";
 import useDropdown from "./common/useDropdown";
-
-const data = ["Limit", 1, 2, 3, 4, 5];
+import countData from "../countData";
 
 const Dropdown = () => {
   const [count, DropdownComponent, setCount] = useDropdown(
-    "COUNT",
+    "Select Limit",
     "Limit",
-    data
+    countData
   );
   const { state, dispatch } = useContext(Context);
-  // console.log("STATE", state.count);
+  //console.log(countData);
 
   useEffect(() => {
     dispatch({ type: "SET_COUNT", payload: count });
