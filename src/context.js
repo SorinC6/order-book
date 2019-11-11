@@ -5,7 +5,8 @@ const context = createContext({
   asks: [],
   trades: [],
   count: "Limit",
-  loading: false
+  loadingOrder: false,
+  loadingTrades: false
 });
 
 export default context;

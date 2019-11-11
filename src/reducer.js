@@ -18,20 +18,35 @@ export default function reducer(state, { type, payload }) {
           })
           .sort((a, b) => b[1] - a[1])
       };
+    case "FETCH_TRADES":
+      return {
+        ...state,
+        trades: payload
+      };
     case "SET_COUNT":
       return {
         ...state,
         count: payload
       };
-    case "START_LOADING":
+    case "START_LOADING_ORDERS":
       return {
         ...state,
-        loading: true
+        loadingOrder: true
       };
-    case "STOP_LOADING":
+    case "STOP_LOADING_ORDERS":
       return {
         ...state,
-        loading: false
+        loadingOrder: false
+      };
+    case "START_LOADING_TRADES":
+      return {
+        ...state,
+        loadingTrades: true
+      };
+    case "STOP_LOADING_TRADES":
+      return {
+        ...state,
+        loadingTrades: false
       };
     default:
       return state;

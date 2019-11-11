@@ -13,10 +13,10 @@ const OrderBook = () => {
       <h2>ORDER BOOK ETH/BTC</h2>
       <Main>
         <OrderCard title="Bids">
-          <BidsList bids={state.bids} loading={state.loading} />
+          <BidsList bids={state.bids} loading={state.loadingOrder} />
         </OrderCard>
         <OrderCard title="Asks">
-          <AsksList asks={state.asks} loading={state.loading} />
+          <AsksList asks={state.asks} loading={state.loadingOrder} />
         </OrderCard>
       </Main>
     </Root>

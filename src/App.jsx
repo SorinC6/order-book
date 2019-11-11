@@ -11,12 +11,9 @@ import data from "./dummyData";
 function App() {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state.count);
-
-  const count = "Limit";
 
   useEffect(() => {
-    dispatch({ type: "START_LOADING" });
+    dispatch({ type: "START_LOADING_ORDERS" });
     axios
       .get(
         `https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=${state.count}`
@@ -31,9 +28,28 @@ function App() {
         console.log(err);
       })
       .finally(() => {
-        dispatch({ type: "STOP_LOADING" });
+        dispatch({ type: "STOP_LOADING_ORDERS" });
       });
   }, [state.count]);
+
+  useEffect(() => {
+    dispatch({ type: "START_LOADING_TRADES" });
+    axios.get(``);
+    axios
+      .get(
+        `https://api.kraken.com/0/public/Trades?pair=ETHUSD&since=1571371200000`
+      )
+      .then(res => {
+        const data = res.data.result.XETHZUSD;
+        dispatch({ type: "FETCH_TRADES", payload: data });
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      .finally(() => {
+        dispatch({ type: "STOP_LOADING_TRADES" });
+      });
+  }, []);
 
   return (
     <div>

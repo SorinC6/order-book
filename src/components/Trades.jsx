@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../context";
 import styled from "styled-components";
 import TradeCard from "./common/TradeCard";
+import TradeList from "./TradeList";
 
 const Trades = () => {
+  const { state } = useContext(Context);
+  console.log(state.loadingTrades);
   return (
     <Root>
       <h2>TRADES ETH/BTC</h2>
-      <TradeCard title="Recent Trades" />
+      <TradeCard title="Recent Trades">
+        <TradeList trades={state.trades} loading={state.loadingTrades} />
+      </TradeCard>
     </Root>
   );
 };

@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import moment from "moment";
 
-const TableRow = ({ count, volume, price, total, type }) => {
+const TableRow = ({ count, volume, price, total, time, type }) => {
+  console.log(
+    "TIME: ",
+    moment(time)
+      .subtract(10, "days")
+      .calendar()
+  );
+
   if (type === "bids") {
     return (
       <Root>
@@ -20,6 +28,21 @@ const TableRow = ({ count, volume, price, total, type }) => {
         <p>{total}</p>
         <p>{volume}</p>
         <p>{count}</p>
+      </Root>
+    );
+  }
+
+  //const date = moment(time).format("MMMM D, YYYY");
+  if ((type = "trades")) {
+    return (
+      <Root>
+        <p>
+          {moment(time)
+            .subtract(10, "days")
+            .calendar()}
+        </p>
+        <p>{price}</p>
+        <p>{total}</p>
       </Root>
     );
   }
@@ -48,6 +71,7 @@ const Root = styled.div`
   }
   p:nth-child(3) {
     color: purple;
+    width: 4.5rem;
   }
   p:nth-child(4) {
     color: green;
