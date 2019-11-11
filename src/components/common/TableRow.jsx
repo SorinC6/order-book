@@ -60,9 +60,9 @@ const Root = styled.div`
   p:nth-child(2) {
   }
   p:nth-child(3) {
-    width: 4.5rem;
+    width: 5rem;
   }
   p:nth-child(4) {
-    width: 3rem;
+    width: 2.9rem;
   }
 `;

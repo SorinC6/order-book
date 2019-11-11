@@ -21,7 +21,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid grey;
-  margin: 5px;
+  margin: 0px;
   width: 300px;
   height: 73vh;
   overflow: scroll;
