@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Context from "../context";
-import useDropdown2 from "./common/useDropdown2";
+import useDropdown2 from "./common/useDropdown";
 import "../App.css";
 
 import countData from "../countData";

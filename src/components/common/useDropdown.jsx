@@ -1,63 +1,114 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const useDropdown = (label, defaultState, option) => {
-  const [state, setState] = useState(defaultState);
-  const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`;
-
-  const Dropdown = () => {
-    return (
-      <label htmlFor={id}>
-        {label}
-        <select
-          id={id}
-          value={state}
-          onChange={e => setState(e.target.value)}
-          onBlur={e => setState(e.target.value)}
-          disabled={!option.length}
-        >
-          {/* <option>Limit</option> */}
-
-          {option &&
-            option.map(item => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-        </select>
-      </label>
-    );
+const useDropdown2 = items => {
+  const [showItems, setShowItem] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(items[0]);
+  const dropdownHandler = () => {
+    setShowItem(!showItems);
   };
+  const handleSelect = item => {
+    setSelectedItem(item);
+    setShowItem(false);
+  };
+  console.log(selectedItem);
+  const Dropdown = () => (
+    <Root>
+      <SelectedItem>
+        <p>{selectedItem}</p>
+      </SelectedItem>
+      <Drop onClick={dropdownHandler}>
+        {showItems ? <ArrowDown /> : <ArrowUP />}
+      </Drop>
+      <DropItems showItems>
+        {showItems &&
+          items.map(it => (
+            <div
+              key={it}
+              onClick={() => handleSelect(it)}
+              className={it === selectedItem ? "selected" : ""}
+            >
+              {it}
+            </div>
+          ))}
+      </DropItems>
+    </Root>
+  );
 
-  return [state, Dropdown, setState];
+  return [selectedItem, Dropdown];
 };
 
-export default useDropdown;
+export default useDropdown2;
 
-const Options = styled.div`
-  box-sizing: border-box;
-  cursor: pointer;
+const Root = styled.div`
+  position: relative;
+  width: 180px;
+`;
+
+const Drop = styled.div`
+  width: 30px;
+  height: 31px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: #aaa;
   position: absolute;
-  background: #fff;
-  line-height: 1.5rem;
-  margin-top: 10px;
-  padding: 10px 10px;
-  width: ${({ width }) => width || "200px"};
-  max-width: 100%;
-  color: #bfc1c4;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
-  border: 1px solid #eaeaea;
-  z-index: 5;
-  .label {
+  right: 0;
+  top: 0;
+`;
+
+const DropItems = styled.div`
+  display: ${props => (props.showItems ? "block" : "none")};
+  color: white;
+  height: 300px;
+  overflow: scroll;
+  div {
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    padding: 6px;
+    padding-left: 20px;
+    cursor: pointer;
+    background-color: darkslateblue;
+
     &:hover {
-      color: #2b303a;
-      transition: 0.5s;
+      background: lightblue;
+      color: black;
     }
   }
 `;
 
-const Op = styled.div`
-  display: flex;
-  flex-direction: column;
+const SelectedItem = styled.div`
+  height: 30px;
+  border: 1px solid #aaa;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 5%;
+  top: 10%;
+
+  p {
+    margin: 5px;
+    margin-left: 10px;
+  }
+`;
+const ArrowUP = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #fff;
+`;
+const ArrowDown = styled.div`
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fff;
 `;
