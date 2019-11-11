@@ -31,7 +31,13 @@ const OrderBook = () => {
           <AsksList asks={state.asks} loading={state.loadingOrder} />
         </OrderCard>
       </Main>
-      <BottomSection></BottomSection>
+      <BottomSection>
+        <p>FULL BOOK</p>
+        <p>
+          <i class="fas fa-circle"></i>
+          REAL BOOK
+        </p>
+      </BottomSection>
     </Root>
   );
 };
@@ -60,4 +66,24 @@ const TopSection = styled.div`
   }
 `;
 
-const BottomSection = styled.div``;
+const BottomSection = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  p:nth-of-type(1) {
+    margin-right: 10px;
+  }
+
+  p:nth-of-type(2) {
+    margin-right: 10px;
+  }
+
+  i {
+    margin-right: 5px;
+    color: green;
+  }
+`;

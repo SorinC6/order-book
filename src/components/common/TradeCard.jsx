@@ -24,10 +24,11 @@ const Root = styled.div`
   padding: 6px;
   margin: 5px;
   width: 300px;
-  height: 75vh;
+  height: 73vh;
   overflow: scroll;
   background-color:${props => props.theme.secondary};
-  box-shadow:${props => props.theme.boxShadow}
+  box-shadow:${props => props.theme.boxShadow};
+  border-radius: 6px;
 
   h3 {
     border-bottom: 1px solid grey;

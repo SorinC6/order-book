@@ -18,6 +18,13 @@ const Trades = () => {
       <TradeCard title="Recent Trades">
         <TradeList trades={state.trades} loading={state.loadingTrades} />
       </TradeCard>
+      <BottomSection>
+        <p>FULL HISTORY</p>
+        <p>
+          <i class="fas fa-circle"></i>
+          REAL TIME
+        </p>
+      </BottomSection>
     </Root>
   );
 };
@@ -44,5 +51,27 @@ const TopSection = styled.div`
   p {
     margin: 0;
     margin-right: 10px;
+  }
+`;
+
+const BottomSection = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  p:nth-of-type(1) {
+    margin-right: 10px;
+  }
+
+  p:nth-of-type(2) {
+    margin-right: 10px;
+  }
+
+  i {
+    margin-right: 5px;
+    color: green;
   }
 `;

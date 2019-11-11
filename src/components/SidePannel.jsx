@@ -28,7 +28,8 @@ const Root = styled.div`
   width: 250px;
   color: white;
   background-color: ${props => props.theme.secondary};
-  box-shadow: ${props => props.boxShadow};
+  box-shadow: ${props => props.theme.boxShadow};
+  border-radius: 6px;
   header {
     display: flex;
     align-items: center;
