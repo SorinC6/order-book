@@ -10,7 +10,19 @@ const OrderBook = () => {
 
   return (
     <Root>
-      <h2>ORDER BOOK ETH/BTC</h2>
+      <TopSection>
+        <h2>
+          <i class="fas fa-check"></i>
+          ORDER BOOK ETH/BTC
+        </h2>
+        <div>
+          <i class="fas fa-minus"></i>
+          <i class="fas fa-plus"></i>
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-cog"></i>
+          <i class="fas fa-search"></i>
+        </div>
+      </TopSection>
       <Main>
         <OrderCard title="Bids">
           <BidsList bids={state.bids} loading={state.loadingOrder} />
@@ -19,6 +31,7 @@ const OrderBook = () => {
           <AsksList asks={state.asks} loading={state.loadingOrder} />
         </OrderCard>
       </Main>
+      <BottomSection></BottomSection>
     </Root>
   );
 };
@@ -37,3 +50,14 @@ const Root = styled.div`
 const Main = styled.div`
   display: flex;
 `;
+
+const TopSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  i {
+    color: grey;
+    margin-right: 10px;
+  }
+`;
+
+const BottomSection = styled.div``;

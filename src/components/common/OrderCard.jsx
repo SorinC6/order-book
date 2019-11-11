@@ -42,7 +42,7 @@ const Root = styled.div`
   padding: 6px;
   margin: 5px;
   width: 300px;
-  height: 80vh;
+  height: 75vh;
   overflow: scroll;
   background-color:${props => props.theme.secondary};
   box-shadow:${props => props.theme.boxShadow}
@@ -58,7 +58,7 @@ const ColumnTitle = styled.div`
   display: flex;
   justify-content: space-between;
   position: sticky;
-  background-color:${props => props.theme.secondary};
+  background-color: ${props => props.theme.secondary};
   top: 0;
   p {
     margin: 0;

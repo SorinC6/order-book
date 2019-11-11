@@ -4,7 +4,7 @@ import styled from "styled-components";
 const BidsList = ({ bids, loading }) => {
   return (
     <Root>
-      {loading && <p>Loading...</p>}
+      {loading && <p style={{ color: "white" }}>Loading...</p>}
       {bids &&
         bids.map((item, idx) => (
           <TableRow
