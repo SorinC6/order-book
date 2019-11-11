@@ -6,7 +6,6 @@ import TradeList from "./TradeList";
 
 const Trades = () => {
   const { state } = useContext(Context);
-  console.log(state.loadingTrades);
   return (
     <Root>
       <h2>TRADES ETH/BTC</h2>

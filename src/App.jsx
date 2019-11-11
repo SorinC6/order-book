@@ -1,16 +1,29 @@
 import React, { useContext, useReducer, useEffect } from "react";
+import { ThemeProvider } from "styled-components";
 import axios from "axios";
 import Context from "./context";
+// import appTheme from "./util/appTheme";
 import reducer from "./reducer";
 import OrderBook from "./components/OrderBook";
 import Trades from "./components/Trades";
 import Layout from "./components/common/Layout";
 import SidePannel from "./components/SidePannel";
-import data from "./dummyData";
 
 function App() {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const theme = {
+    primary: "white",
+    secondary: "#1C262D",
+    mainBackground: "grey",
+    boxShadow: "0px 4px 7px #777",
+    headerBackground: "#2C3940",
+    projectBackground: "",
+    projectNav: "",
+    contactBackground: "",
+    contactNav: ""
+  };
 
   useEffect(() => {
     dispatch({ type: "START_LOADING_ORDERS" });
@@ -53,13 +66,15 @@ function App() {
 
   return (
     <div>
-      <Context.Provider value={{ state, dispatch }}>
-        <Layout>
-          <SidePannel />
-          <OrderBook />
-          <Trades />
-        </Layout>
-      </Context.Provider>
+      <ThemeProvider theme={theme}>
+        <Context.Provider value={{ state, dispatch }}>
+          <Layout>
+            <SidePannel />
+            <OrderBook />
+            <Trades />
+          </Layout>
+        </Context.Provider>
+      </ThemeProvider>
     </div>
   );
 }

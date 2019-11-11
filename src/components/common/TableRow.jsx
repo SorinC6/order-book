@@ -3,12 +3,12 @@ import styled from "styled-components";
 import moment from "moment";
 
 const TableRow = ({ count, volume, price, total, time, type }) => {
-  console.log(
-    "TIME: ",
-    moment(time)
-      .subtract(10, "days")
-      .calendar()
-  );
+  // console.log(
+  //   "TIME: ",
+  //   moment(time)
+  //     .subtract(10, "days")
+  //     .calendar()
+  // );
 
   if (type === "bids") {
     return (
@@ -61,20 +61,17 @@ const Root = styled.div`
     margin: 5px;
     width: 4rem;
     text-align: center;
+    color: #6a7d82;
   }
   p:nth-child(1) {
-    color: red;
     width: 16%;
   }
   p:nth-child(2) {
-    color: blue;
   }
   p:nth-child(3) {
-    color: purple;
     width: 4.5rem;
   }
   p:nth-child(4) {
-    color: green;
     width: 3rem;
   }
 `;
