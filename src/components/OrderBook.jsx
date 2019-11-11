@@ -12,15 +12,15 @@ const OrderBook = () => {
     <Root>
       <TopSection>
         <h2>
-          <i class="fas fa-check"></i>
+          <i className="fas fa-check"></i>
           ORDER BOOK ETH/BTC
         </h2>
         <div>
-          <i class="fas fa-minus"></i>
-          <i class="fas fa-plus"></i>
-          <i class="fas fa-bell"></i>
-          <i class="fas fa-cog"></i>
-          <i class="fas fa-search"></i>
+          <i className="fas fa-minus"></i>
+          <i className="fas fa-plus"></i>
+          <i className="fas fa-bell"></i>
+          <i className="fas fa-cog"></i>
+          <i className="fas fa-search"></i>
         </div>
       </TopSection>
       <Main>
@@ -34,7 +34,7 @@ const OrderBook = () => {
       <BottomSection>
         <p>FULL BOOK</p>
         <p>
-          <i class="fas fa-circle"></i>
+          <i className="fas fa-circle"></i>
           REAL BOOK
         </p>
       </BottomSection>

@@ -3,12 +3,7 @@ import styled from "styled-components";
 import moment from "moment";
 
 const TableRow = ({ count, volume, price, total, time, type }) => {
-  // console.log(
-  //   "TIME: ",
-  //   moment(time)
-  //     .subtract(10, "days")
-  //     .calendar()
-  // );
+  let timeFormat = moment(time).format("h:mm:ss");
 
   if (type === "bids") {
     return (
@@ -36,11 +31,7 @@ const TableRow = ({ count, volume, price, total, time, type }) => {
   if ((type = "trades")) {
     return (
       <Root>
-        <p>
-          {moment(time)
-            .subtract(10, "days")
-            .calendar()}
-        </p>
+        <p>{timeFormat}</p>
         <p>{price}</p>
         <p>{total}</p>
       </Root>

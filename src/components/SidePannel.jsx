@@ -6,12 +6,12 @@ const SidePannel = () => {
   return (
     <Root>
       <header>
-        <i class="fab fa-ethereum"></i>
+        <i className="fab fa-ethereum"></i>
         <h2>ETH/BTC</h2>
       </header>
       <section>
         <TopSection>
-          <i class="fas fa-check"></i>
+          <i className="fas fa-check"></i>
           <h3>ORDER FROM</h3>
         </TopSection>
         <Dropdown />

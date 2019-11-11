@@ -10,7 +10,7 @@ const Trades = () => {
     <Root>
       <TopSection>
         <h2>
-          <i class="fas fa-check"></i>
+          <i className="fas fa-check"></i>
           TRADES ETH/BTC
         </h2>
         <p>Market</p>
@@ -21,7 +21,7 @@ const Trades = () => {
       <BottomSection>
         <p>FULL HISTORY</p>
         <p>
-          <i class="fas fa-circle"></i>
+          <i className="fas fa-circle"></i>
           REAL TIME
         </p>
       </BottomSection>

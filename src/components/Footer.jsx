@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import styled from "styled-components";
 
@@ -5,7 +6,12 @@ const Footer = () => {
   return (
     <Root>
       <p>
-        github repository for the project <span>Here</span>
+        github repository for the project{" "}
+        <span>
+          <a href="https://github.com/SorinC6/order-book-test" target="_blank">
+            Here
+          </a>
+        </span>
       </p>
     </Root>
   );
@@ -27,8 +33,9 @@ const Root = styled.div`
     margin: 10px;
   }
 
-  span {
+  a {
     color: lightgrey;
     cursor: pointer;
+    text-decoration: none;
   }
 `;

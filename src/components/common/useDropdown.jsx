@@ -11,7 +11,6 @@ const useDropdown2 = items => {
     setSelectedItem(item);
     setShowItem(false);
   };
-  console.log(selectedItem);
   const Dropdown = () => (
     <Root>
       <SelectedItem>
