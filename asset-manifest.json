@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SorinC6/order-book/static/css/main.0344b5d9.chunk.css",
-    "main.js": "/SorinC6/order-book/static/js/main.3453cc51.chunk.js",
-    "main.js.map": "/SorinC6/order-book/static/js/main.3453cc51.chunk.js.map",
+    "main.js": "/SorinC6/order-book/static/js/main.27b5e00b.chunk.js",
+    "main.js.map": "/SorinC6/order-book/static/js/main.27b5e00b.chunk.js.map",
     "runtime-main.js": "/SorinC6/order-book/static/js/runtime-main.4672afc9.js",
     "runtime-main.js.map": "/SorinC6/order-book/static/js/runtime-main.4672afc9.js.map",
     "static/js/2.45080e90.chunk.js": "/SorinC6/order-book/static/js/2.45080e90.chunk.js",
     "static/js/2.45080e90.chunk.js.map": "/SorinC6/order-book/static/js/2.45080e90.chunk.js.map",
     "index.html": "/SorinC6/order-book/index.html",
-    "precache-manifest.1ec23d879b60f200afffe8b76e97acd4.js": "/SorinC6/order-book/precache-manifest.1ec23d879b60f200afffe8b76e97acd4.js",
+    "precache-manifest.624cf652e8e2b6ea79c245fb7baec306.js": "/SorinC6/order-book/precache-manifest.624cf652e8e2b6ea79c245fb7baec306.js",
     "service-worker.js": "/SorinC6/order-book/service-worker.js",
     "static/css/main.0344b5d9.chunk.css.map": "/SorinC6/order-book/static/css/main.0344b5d9.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.4672afc9.js",
     "static/js/2.45080e90.chunk.js",
     "static/css/main.0344b5d9.chunk.css",
-    "static/js/main.3453cc51.chunk.js"
+    "static/js/main.27b5e00b.chunk.js"
   ]
 }
