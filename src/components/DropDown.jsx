@@ -1,24 +1,23 @@
 import React, { useContext, useEffect } from "react";
 import Context from "../context";
-import useDropdown from "./common/useDropdown";
+import useDropdown2 from "./common/useDropdown2";
+import "../App.css";
+
 import countData from "../countData";
 
 const Dropdown = () => {
-  const [count, DropdownComponent, setCount] = useDropdown(
-    "Select Limit",
-    "Limit",
-    countData
-  );
-  const { state, dispatch } = useContext(Context);
-  //console.log(countData);
+  const [selectedItem, Dropdown] = useDropdown2(countData);
+  const { dispatch } = useContext(Context);
 
   useEffect(() => {
-    dispatch({ type: "SET_COUNT", payload: count });
-  }, [count, dispatch]);
+    dispatch({ type: "SET_COUNT", payload: selectedItem });
+  }, [selectedItem, dispatch]);
 
-  //console.log(count);
-
-  return <DropdownComponent />;
+  return (
+    <>
+      <Dropdown />
+    </>
+  );
 };
 
 export default Dropdown;

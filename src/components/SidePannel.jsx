@@ -43,6 +43,7 @@ const Root = styled.div`
   section {
     display: flex;
     flex-direction: column;
+    padding-left: 15px;
   }
 `;
 
