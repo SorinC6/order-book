@@ -39,7 +39,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid grey;
-  padding: 6px;
+  /* padding: 6px; */
   margin: 5px;
   width: 300px;
   height: 73vh;
@@ -61,8 +61,10 @@ const ColumnTitle = styled.div`
   position: sticky;
   background-color: ${props => props.theme.secondary};
   top: 0;
+  box-shadow: 0px 1px 3px #777;
+
   p {
-    margin: 0;
+    padding-top: 1px;
     width: 4rem;
     text-align: center;
     color: white;

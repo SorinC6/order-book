@@ -1,13 +1,12 @@
-const appTheme = {
+const theme = {
   primary: "white",
   secondary: "#1C262D",
   mainBackground: "grey",
-  h2: "#666564",
-  headerBackground: "#0091cf",
+  boxShadow: "0px 4px 7px #777",
+  headerBackground: "#2C3940",
   projectBackground: "",
   projectNav: "",
   contactBackground: "",
   contactNav: ""
 };
-
-export default appTheme;
+export default theme;

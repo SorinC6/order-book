@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import moment from "moment";
+import PropTypes from "prop-types";
 
 const TableRow = ({ count, volume, price, total, time, type }) => {
-  // console.log(
-  //   "TIME: ",
-  //   moment(time)
-  //     .subtract(10, "days")
-  //     .calendar()
-  // );
+  let timeFormat = moment(time).format("h:mm:ss");
 
   if (type === "bids") {
     return (
@@ -36,11 +32,7 @@ const TableRow = ({ count, volume, price, total, time, type }) => {
   if ((type = "trades")) {
     return (
       <Root>
-        <p>
-          {moment(time)
-            .subtract(10, "days")
-            .calendar()}
-        </p>
+        <p>{timeFormat}</p>
         <p>{price}</p>
         <p>{total}</p>
       </Root>
@@ -50,6 +42,15 @@ const TableRow = ({ count, volume, price, total, time, type }) => {
 };
 
 export default TableRow;
+
+TableRow.prototype = {
+  count: PropTypes.number.isRequired,
+  volume: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
+  time: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+};
 
 const Root = styled.div`
   display: flex;
@@ -69,9 +70,9 @@ const Root = styled.div`
   p:nth-child(2) {
   }
   p:nth-child(3) {
-    width: 4.5rem;
+    width: 5rem;
   }
   p:nth-child(4) {
-    width: 3rem;
+    width: 2.9rem;
   }
 `;

@@ -21,19 +21,18 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid grey;
-  padding: 6px;
-  margin: 5px;
+  margin: 0px;
   width: 300px;
   height: 73vh;
   overflow: scroll;
-  background-color:${props => props.theme.secondary};
-  box-shadow:${props => props.theme.boxShadow};
+  background-color: ${props => props.theme.secondary};
+  box-shadow: ${props => props.theme.boxShadow};
   border-radius: 6px;
 
   h3 {
     border-bottom: 1px solid grey;
     margin: 5px;
-    color:white;
+    color: white;
   }
 `;
 
@@ -43,8 +42,11 @@ const ColumnTitle = styled.div`
   position: sticky;
   background-color: ${props => props.theme.secondary};
   top: 0;
+  box-shadow: 0px 1px 3px #777;
   p {
-    margin: 0;
+    padding-top: 1px;
+    width: 5rem;
+    text-align: center;
     color: white;
   }
 `;
