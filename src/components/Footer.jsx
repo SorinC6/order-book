@@ -8,7 +8,7 @@ const Footer = () => {
       <p>
         github repository for the project{" "}
         <span>
-          <a href="https://github.com/SorinC6/order-book-test" target="_blank">
+          <a href="https://github.com/SorinC6/order-book" target="_blank">
             Here
           </a>
         </span>
