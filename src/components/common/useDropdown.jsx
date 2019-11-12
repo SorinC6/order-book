@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-const useDropdown2 = items => {
+const useDropdown = items => {
   const [showItems, setShowItem] = useState(false);
   const [selectedItem, setSelectedItem] = useState(items[0]);
   const dropdownHandler = () => {
@@ -11,6 +12,7 @@ const useDropdown2 = items => {
     setSelectedItem(item);
     setShowItem(false);
   };
+
   const Dropdown = () => (
     <Root>
       <SelectedItem>
@@ -37,7 +39,11 @@ const useDropdown2 = items => {
   return [selectedItem, Dropdown];
 };
 
-export default useDropdown2;
+useDropdown.propTypes = {
+  items: PropTypes.array.isRequired
+};
+
+export default useDropdown;
 
 const Root = styled.div`
   position: relative;

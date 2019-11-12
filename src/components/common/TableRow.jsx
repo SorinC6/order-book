@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import moment from "moment";
+import PropTypes from "prop-types";
 
 const TableRow = ({ count, volume, price, total, time, type }) => {
   let timeFormat = moment(time).format("h:mm:ss");
@@ -41,6 +42,15 @@ const TableRow = ({ count, volume, price, total, time, type }) => {
 };
 
 export default TableRow;
+
+TableRow.prototype = {
+  count: PropTypes.number.isRequired,
+  volume: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
+  time: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+};
 
 const Root = styled.div`
   display: flex;

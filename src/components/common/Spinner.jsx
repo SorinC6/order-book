@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import PropTypes from "prop-types";
 
 const Spinner = ({ loading }) => {
   return (
@@ -17,6 +18,10 @@ const Spinner = ({ loading }) => {
       )}
     </>
   );
+};
+
+Spinner.propTypes = {
+  loading: PropTypes.bool.isRequired
 };
 
 export default Spinner;
