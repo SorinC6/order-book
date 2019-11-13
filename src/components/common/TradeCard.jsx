@@ -24,7 +24,7 @@ const Root = styled.div`
   margin: 0px;
   width: 300px;
   height: 73vh;
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: ${props => props.theme.secondary};
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: 6px;

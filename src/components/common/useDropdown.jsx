@@ -66,7 +66,7 @@ const DropItems = styled.div`
   display: ${props => (props.showItems ? "block" : "none")};
   color: white;
   height: 300px;
-  overflow: scroll;
+  overflow-y: scroll;
   div {
     border-bottom: 1px solid grey;
     border-left: 1px solid grey;
